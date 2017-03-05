@@ -1,1 +1,73 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en" data-ng-controller="AppCtrl">
+    <head>
+        <base href="/">
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <title ng-bind="pageTitle">Welcome | Leco</title>
+
+        <!-- social media tags -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@newedgeengineer" />
+        <meta name="twitter:title" content="leco" />
+        <meta name="twitter:description" content="Data as a service that you can manage as you need." />
+        <meta name="twitter:creator" content="@newedgeengineer" />
+        <meta name="twitter:image:src" content="//database-logo.png" />
+        <meta property="og:title" content="leco" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://www.leco.io" />
+        <meta property="og:image" content="//database-logo.png" />
+        <meta property="og:description" content="Data as a service that you can manage as you need.">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="Data as a service that you can manage as you need.">
+        <!-- Place favicon.ico (with ? to ensure firefox pick this up) and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="favicon.ico?">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <noscript id="deferred-styles">
+            <!-- font awesome from BootstrapCDN -->
+            <link href="//netdna.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
+            <!-- compiled CSS -->
+            <link rel="stylesheet" type="text/css" href="yet-another-angularjs-seed-17.03.14.css" />
+        </noscript>
+        <script>  // <!-- As recommended by google: -->
+var loadDeferredStyles = function() {
+var addStylesNode = document.getElementById("deferred-styles");
+var replacement = document.createElement("div");
+replacement.innerHTML = addStylesNode.textContent;
+document.body.appendChild(replacement);
+addStylesNode.parentElement.removeChild(addStylesNode);
+};
+var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+  webkitRequestAnimationFrame || msRequestAnimationFrame;
+if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+else window.addEventListener('load', loadDeferredStyles);
+        </script>    </head>
+    <body>
+        <div class="wrap">
+          <!--[if lt IE 8]>
+              <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+          <![endif]-->
+
+          <div class="container" ui-view="main"></div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-inner">
+                  <p class="col-md-8 text-left"><small>&copy; 2009 - {{ date|date:'yyyy'}} <a href="http://www.newedgeengineering.com">New EdgeEngineering Ltd</a> trading as Leco.<br />A registered as a private limited company in England & Wales No: 06846079, VAT: 973 0618 12</small></p>
+                  <p class="col-md-4 text-right"><a href="/humans.txt"><img src="//humanstxt.org/img/oficial-logos/humanstxt-isolated-blank.gif" alt="Humans.txt" width="88" height="31" id="humans"></a></p>
+            </div>
+        </footer>
+        <!-- load JavaScript via AMD pattern -->
+        <script type="text/javascript" src="lib/requirejs/require.js"></script>
+        <script type="application/javascript">
+require(['config.js'], function () {
+    require(['yet-another-angularjs-seed-17.03.14'], function() {
+      require(['app/app.main']);
+    });});
+        </script>
+    </body>
+</html>
